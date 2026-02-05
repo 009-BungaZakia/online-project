@@ -66,9 +66,6 @@ function App() {
       />
 
       <main className="container">
-       <h1 className="hero-title text-3xl font-bold text-center text-gray-800 mb-6 text-shadow-transparent">
-       Katalog Produk Resmi
-       </h1>
         {loading ? (
         <p className="text-center text-gray-600">
          Loading.....
