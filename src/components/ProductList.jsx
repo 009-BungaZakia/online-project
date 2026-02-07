@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./ProdukCard";
 
-function ProductList({ products, onAddToCart }) {
+function ProductList({ products, onAddToCart, role, onEdit, onDelete }) {
   // Tampilan jika produk kosong
   if (products.length === 0) {
     return (
@@ -29,13 +29,16 @@ function ProductList({ products, onAddToCart }) {
         </p>
       </div>
 
-      {/* Grid System: Otomatis menyesuaikan jumlah kolom berdasarkan lebar layar */}
+      {/* Grid System */}
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {products.map((item) => (
           <ProductCard 
             key={item.id} 
             item={item} 
             onAddToCart={onAddToCart} 
+            role={role} 
+            onEdit={onEdit}     // 2. Teruskan fungsi Edit ke Card
+            onDelete={onDelete} // 3. Teruskan fungsi Delete ke Card
           />
         ))}
       </div>
